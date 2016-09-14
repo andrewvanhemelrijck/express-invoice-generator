@@ -1,0 +1,43 @@
+
+/*********************************/
+/********* Typography ************/
+/*********************************/
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $line-height;
+  margin-top: 3em;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: .75em;
+}
+
+h2 {
+  font-size: 1.75em;
+  line-height: .8571em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+h6 {
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: $line-height;
+}

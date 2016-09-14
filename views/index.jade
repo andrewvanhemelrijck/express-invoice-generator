@@ -1,0 +1,80 @@
+doctype html
+html
+  head
+    title Invoice Generator
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(class="container")
+      header(id="header")
+      img(src="images/rwd-logo.gif" alt="Rabbit Web Design Logo")
+      p 22 Conch Road | Narragansett, RI 02882
+        br
+        |rabbitwebdesign.net | andrew@rabbitwebdesign.net
+
+      section(id="title")
+        h1 INVOICE
+        p #INV-#{data.invoiceNumber}
+
+      section(id="summary")
+        p(id="client-label") Client:
+        div(class="row")
+          div(class="col7")
+            p <strong>#{data.client.name}</strong> c/o #{data.client.co}
+              br
+              |#{data.client.address.street}
+              br
+              |#{data.client.address.townState} #{data.client.address.zip}
+          div(class="col5")
+            table(id="summary-table")
+              tr
+                td Invoice date
+                td #{data.date.getMonth()+1}/#{data.date.getDate()}/#{data.date.getFullYear()}
+              tr
+                td Due date
+                td #{data.dueDate().getMonth()+1}/#{data.dueDate().getDate()}/#{data.dueDate().getFullYear()}
+              tr
+                td <strong>Amount due</strong>
+                td <strong>$#{data.total()}</strong>
+
+      table(id="itemized-table")
+        tr
+          th Products
+          th Price
+          th Qty.
+          th Linetotal 
+
+        each product in data.products        
+          tr
+            td=product.name
+            td=product.price
+            td=product.quantity
+            td $#{product.lineTotal().toFixed(2)}
+
+      div(id="totals-table" class="col5 right")
+        table
+
+          unless data.subTotal() == data.total()
+            tr
+              td SUB-TOTAL
+              td $#{data.subTotal()}
+
+          if data.deposit
+            tr
+              td DEPOSIT
+              td -$#{data.deposit.toFixed(2)}
+
+          if data.discount
+            tr
+              td DISCOUNT
+              td -$#{data.discount.toFixed(2)}
+          tr(id="total-line")
+            td <strong>TOTAL</strong>
+            td <strong>$#{data.total()}</strong>
+
+      div(class="clear")
+
+      footer(id="footer")
+        h4 Thank you for your business.
+          br
+          |It has been a pleasure working with you.
+        p Please deliver payment within #{data.dueDateInterval} days of receiving this invoice.
