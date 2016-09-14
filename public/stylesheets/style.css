@@ -228,7 +228,7 @@ body {
     padding: 2px 5px; }
 
 #itemized-table {
-  margin-bottom: 4em; }
+  margin-bottom: 3em; }
   #itemized-table tr td, #itemized-table tr th {
     padding: 2px 0;
     text-align: center; }
@@ -278,6 +278,6 @@ body {
     page-break-after: always; }
 
   #itemized-table {
-    min-height: 10em; } }
+    min-height: 9em; } }
 
 /*# sourceMappingURL=style.css.map */

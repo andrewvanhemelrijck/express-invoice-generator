@@ -2,7 +2,7 @@ var data = {
   invoiceNumber: "012",
   client: {
     name: "Rotary Club of Wakefield",
-    co: "Laurie Ramacher",
+    co: "Laurie Ramaker",
     address: {
       street: "PO Box 382",
       townState: "Wakefield, RI",
