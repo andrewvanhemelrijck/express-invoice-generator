@@ -35,20 +35,21 @@ html
               tr
                 td <strong>Amount due</strong>
                 td <strong>$#{invoice.total()}</strong>
-
-      table(id="itemized-table")
-        tr
-          th Products
-          th Price
-          th Qty.
-          th Linetotal 
-
-        each product in invoice.data.products        
+      
+      section(id="itemized-table")
+        table
           tr
-            td=product.name
-            td=product.price
-            td=product.quantity
-            td $#{invoice.productLineTotal(product).toFixed(2)}
+            th Products
+            th Price
+            th Qty.
+            th Linetotal 
+
+          each product in invoice.data.products        
+            tr
+              td=product.name
+              td=product.price
+              td=product.quantity
+              td $#{invoice.productLineTotal(product).toFixed(2)}
 
       div(id="totals-table" class="col5 right")
         table
