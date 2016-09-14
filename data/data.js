@@ -20,7 +20,7 @@ var data = {
       name: "South County Balloon Festival Web Site",
       price: "$50/hr",
       priceUSD: 50,
-      quantity: 20,
+      quantity: 20.2,
       lineTotal: function() {
         return this.priceUSD * this.quantity;
       }
@@ -35,7 +35,7 @@ var data = {
     return sum.toFixed(2);
   },
   deposit: "",
-  discount: "",
+  discount: 707,
   total: function() {
     var output = this.subTotal() - this.deposit - this.discount;
     return output.toFixed(2);
