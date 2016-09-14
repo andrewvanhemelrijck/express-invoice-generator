@@ -13,28 +13,28 @@ html
 
       section(id="title")
         h1 INVOICE
-        p #INV-#{data.invoiceNumber}
+        p #INV-#{invoice.data.invoiceNumber}
 
       section(id="summary")
         p(id="client-label") Client:
         div(class="row")
           div(class="col7")
-            p <strong>#{data.client.name}</strong> c/o #{data.client.co}
+            p <strong>#{invoice.data.client.name}</strong> c/o #{invoice.data.client.co}
               br
-              |#{data.client.address.street}
+              |#{invoice.data.client.address.street}
               br
-              |#{data.client.address.townState} #{data.client.address.zip}
+              |#{invoice.data.client.address.townState} #{invoice.data.client.address.zip}
           div(class="col5")
             table(id="summary-table")
               tr
                 td Invoice date
-                td #{data.date.getMonth()+1}/#{data.date.getDate()}/#{data.date.getFullYear()}
+                td #{invoice.data.date.getMonth()+1}/#{invoice.data.date.getDate()}/#{invoice.data.date.getFullYear()}
               tr
                 td Due date
-                td #{data.dueDate().getMonth()+1}/#{data.dueDate().getDate()}/#{data.dueDate().getFullYear()}
+                td #{invoice.dueDate().getMonth()+1}/#{invoice.dueDate().getDate()}/#{invoice.dueDate().getFullYear()}
               tr
                 td <strong>Amount due</strong>
-                td <strong>$#{data.total()}</strong>
+                td <strong>$#{invoice.total()}</strong>
 
       table(id="itemized-table")
         tr
@@ -43,34 +43,34 @@ html
           th Qty.
           th Linetotal 
 
-        each product in data.products        
+        each product in invoice.data.products        
           tr
             td=product.name
             td=product.price
             td=product.quantity
-            td $#{product.lineTotal().toFixed(2)}
+            td $#{invoice.productLineTotal(product).toFixed(2)}
 
       div(id="totals-table" class="col5 right")
         table
 
-          unless data.subTotal() == data.total()
+          unless invoice.subTotal() == invoice.total()
             tr
               td SUB-TOTAL
-              td $#{data.subTotal()}
+              td $#{invoice.subTotal()}
 
-          if data.deposit
+          if invoice.data.deposit
             tr
               td DEPOSIT
-              td -$#{data.deposit.toFixed(2)}
+              td -$#{invoice.data.deposit.toFixed(2)}
 
-          if data.discount
+          if invoice.data.discount
             tr
               td DISCOUNT
-              td -$#{data.discount.toFixed(2)}
+              td -$#{invoice.data.discount.toFixed(2)}
               
           tr(id="total-line")
             td <strong>TOTAL</strong>
-            td <strong>$#{data.total()}</strong>
+            td <strong>$#{invoice.total()}</strong>
 
       div(class="clear")
 
@@ -78,4 +78,4 @@ html
         h4 Thank you for your business.
           br
           |It has been a pleasure working with you.
-        p Please deliver payment within #{data.dueDateInterval} days of receiving this invoice.
+        p Please deliver payment within #{invoice.data.dueDateInterval} days of receiving this invoice.
