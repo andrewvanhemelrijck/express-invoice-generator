@@ -13,7 +13,7 @@ var data = {
   dueDateInterval: 14, //in days
   products: [
     {
-      name: "Balloon Festival Website (Maintenance)",
+      name: "Balloon Festival Website (Maintenance & Updates)",
       price: "$50/hr",
       priceUSD: 50,
       quantity: 20.2
