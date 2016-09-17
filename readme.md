@@ -6,6 +6,6 @@ This is a small invoice generator I made to help me create invoices for my web d
 
 1. Client data is entered into a javascript object in the data/data.js file. The object can take the client’s name and contact info, and details about the work being completed.
 
-2. Run ‘npm start’ in the console and check ‘localhost:3000’ in the browser. You should see the data compiled into an invoice.
+2. Run `npm start` in the console and check `localhost:3000` in the browser. You should see the data compiled into an invoice.
 
-‘views/index.jade’ can be edited to customize the look & feel of the invoice. Company logo, address etc. is all handled here.
+`views/index.jade` can be edited to customize the look & feel of the invoice. Company logo, address etc. is all handled here.
