@@ -1,6 +1,6 @@
 #Express Invoice Generator
 
-This is a small invoice generator I made to help me create invoices for my web design work. It’s built on the Express framework for Node.js with Jade/Pug templating. It’s simple, but it serves a purpose for me: turn variable inputs (client information, billable hours) into a polished invoice that I can send out to clients. At this point data is manually entered into a javascript object and operated on by a few functions that generate the totals etc., but I can envision this app as a small part of a larger app that manages a lot more of my client data and operations. Let me know what you think.
+This is a small invoice generator I made to help me create invoices for my web design work. It’s built on the Express framework for Node.js with Jade/Pug templating. It’s simple, but it serves a purpose for me - turn variable inputs (client information, billable hours) into a polished invoice that I can send out to clients. At this point data is manually entered into a javascript object and operated on by a few functions that generate the totals etc., but I can envision this app as a small part of a larger app that manages a lot more of my client data and operations. Let me know what you think.
 
 ##How to use it
 
