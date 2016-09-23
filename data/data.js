@@ -9,14 +9,14 @@ var data = {
       zip: "02880"
     }
   },
-  date: new Date(),
+  date: new Date('9/26/16'),
   dueDateInterval: 14, //in days
   products: [
     {
       name: "Balloon Festival Website (Maintenance & Updates)",
       price: "$50/hr",
       priceUSD: 50,
-      quantity: 20.2
+      quantity: 21
     }
   ],
   deposit: "",
